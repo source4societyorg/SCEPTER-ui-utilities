@@ -6,7 +6,7 @@ import { memoryHistory } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import React from 'react';
 import { configureStore } from '@source4society/scepter-app-utilities';
-import { reducerInjector } from '../src/index';
+import { reducerInjector, constructReducerArgumentFunction } from '../src/index';
 
 // Fixtures
 const Component = () => null;
@@ -29,5 +29,20 @@ describe('injectReducer decorator', () => {
     store = configureStore({}, memoryHistory);
     const renderedComponent = shallow(<ComponentWithReducer {...props} />, { context: { store } });
     expect(renderedComponent.prop('testProp')).toBe('test');
+  });
+});
+
+describe('constructReducerArgument function', () => {
+  it('should return either the reducer, or the reducer with namespaced reducer key if a reducer key is provided', () => {
+    const mockReducerKey = 'mockReducerKey';
+    const mockKey = 'mockKey';
+    const mockReducer = { hasProperties: 'mockReducer' };
+    const mockNamespacedReducer = (reducerKey) => {
+      expect(reducerKey).toEqual(mockReducerKey);
+      return mockReducer;
+    };
+
+    expect(constructReducerArgumentFunction(true, mockReducerKey, mockKey, mockNamespacedReducer)).toEqual(mockReducer);
+    expect(constructReducerArgumentFunction(false, mockReducerKey, mockKey, mockReducer)).toEqual(mockReducer);
   });
 });

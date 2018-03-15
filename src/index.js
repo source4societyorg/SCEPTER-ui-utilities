@@ -37,7 +37,7 @@ export function checkStore(store) {
  * @param {function} reducer A reducer that will be injected
  *
  */
-export const reducerInjector = ({ key, reducer, isNamespaced = false }) => (WrappedComponent) => {
+export const reducerInjector = ({ key, reducer, isNamespaced = false, injectConstructReducerArgument }) => (WrappedComponent) => {
   class ReducerInjector extends React.Component {
     static WrappedComponent = WrappedComponent;
 
@@ -51,10 +51,11 @@ export const reducerInjector = ({ key, reducer, isNamespaced = false }) => (Wrap
     };
 
     componentWillMount() {
+      const constructReducerArgument = valueOrDefault(injectConstructReducerArgument, constructReducerArgumentFunction);
       const { injectReducer } = this.injectors;
       injectReducer(
         ifTrueElseDefault(isNamespaced, valueOrDefault(this.props.reducerKey, key), key),
-        ifTrueElseDefault(isNamespaced, reducer(valueOrDefault(this.props.reducerKey, key)), reducer)
+        constructReducerArgument(isNamespaced, this.props.reducerKey, key, reducer),
       );
     }
 
@@ -248,6 +249,8 @@ export const sagaInjector = ({ key, saga, mode }) => (WrappedComponent) => {
 
   return hoistNonReactStatics(InjectSaga, WrappedComponent);
 };
+
+export const constructReducerArgumentFunction = (isNamespaced, reducerKey, key, reducer) => isNamespaced ? reducer(valueOrDefault(reducerKey, key)) : reducer;
 
 export const RESTART_ON_REMOUNT = '@@saga-injector/restart-on-remount';
 export const DAEMON = '@@saga-injector/daemon';
