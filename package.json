@@ -1,9 +1,9 @@
 {
-  "name": "@source4society/scepter-webui-utilities",
-  "version": "1.0.2",
-  "description": "Utilities for the web user interface boilerplate extracted from react-boilerplate and packaged in a modular library",
+  "name": "@source4society/scepter-ui-utilities",
+  "version": "1.0.0",
+  "description": "Utilities for the universal react user interface, boilerplate extracted from react-boilerplate and packaged in a modular library",
   "main": "lib/index.js",
-  "repository": "git@github.com:source4societyorg/SCEPTER-webui-utilities.git",
+  "repository": "git@github.com:source4societyorg/SCEPTER-ui-utilities.git",
   "author": "Source 4 Society <accounts@source4society.org>",
   "license": "AGPL-3.0",
   "private": false,
@@ -16,12 +16,11 @@
     "@source4society/scepter-app-utilities": "^2.0.3",
     "babel-polyfill": "6.23.0",
     "exports-loader": "^0.6.4",
+    "history": "^4.7.2",
     "hoist-non-react-statics": "2.1.1",
     "immutable": "^3.8.2",
     "lodash": "4.17.5",
     "react": "15.6.1",
-    "react-dom": "15.6.1",
-    "react-router-dom": "4.1.1",
     "react-test-renderer": "15.6.1",
     "redux-saga": "^0.16.0",
     "webpack": "3.5.5",
@@ -54,7 +53,9 @@
     "eslint-plugin-jest": "^21.5.0",
     "eslint-plugin-jsx-a11y": "5.0.3",
     "eslint-plugin-react": "^7.6.1",
-    "jest-cli": "21.0.0"
+    "jest-cli": "21.0.0",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.2.2"
   },
   "jest": {
     "coverageReporters": [
