@@ -2,11 +2,11 @@
 # yarn lockfile v1
 
 
-"@source4society/scepter-app-utilities@^2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@source4society/scepter-app-utilities/-/scepter-app-utilities-2.0.3.tgz#1ef9f3d82e34c431524cd55ac13143303baf50d6"
+"@source4society/scepter-app-utilities@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@source4society/scepter-app-utilities/-/scepter-app-utilities-2.1.1.tgz#f0e5eba81b8e018161e83eaf6e2ca570e4e8bc45"
   dependencies:
-    "@source4society/scepter-utility-lib" "^1.1.0"
+    "@source4society/scepter-utility-lib" "^2.0.0"
     hoist-non-react-statics "^2.5.0"
     immutable "^3.8.2"
     lodash "^4.17.5"
@@ -19,6 +19,20 @@
 "@source4society/scepter-utility-lib@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@source4society/scepter-utility-lib/-/scepter-utility-lib-1.1.0.tgz#2a5ef0ff8a499eacde477d57cef250e2501c3293"
+
+"@source4society/scepter-utility-lib@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@source4society/scepter-utility-lib/-/scepter-utility-lib-2.0.0.tgz#0c74aadb2b35f2015d64d4fc4e6d28fafdeeb258"
+  dependencies:
+    "@source4society/scepter-utility-lib" "^1.1.0"
+    immutable "3.8.1"
+    moment "^2.20.1"
+    react "15.6.1"
+    react-dom "15.6.1"
+    react-router-dom "4.1.1"
+    react-test-renderer "15.6.1"
+    redux-saga "^0.16.0"
+    reselect "3.0.1"
 
 abab@^1.0.3:
   version "1.0.4"
@@ -2769,7 +2783,7 @@ hawk@~6.0.2:
     hoek "4.x.x"
     sntp "2.x.x"
 
-history@^4.7.2:
+history@^4.5.1, history@^4.7.2:
   version "4.7.2"
   resolved "https://registry.yarnpkg.com/history/-/history-4.7.2.tgz#22b5c7f31633c5b8021c7f4a8a954ac139ee8d5b"
   dependencies:
@@ -2862,6 +2876,10 @@ ieee754@^1.1.4:
 ignore@^3.2.0:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.7.tgz#612289bfb3c220e186a58118618d5be8c1bab021"
+
+immutable@3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
 
 immutable@^3.8.2:
   version "3.8.2"
@@ -3883,6 +3901,10 @@ mixin-deep@^1.2.0:
   dependencies:
     minimist "0.0.8"
 
+moment@^2.20.1:
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.21.0.tgz#2a114b51d2a6ec9e6d83cf803f838a878d8a023a"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -4461,6 +4483,15 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-dom@15.6.1:
+  version "15.6.1"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.1.tgz#2cb0ed4191038e53c209eb3a79a23e2a4cf99470"
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.0"
+    prop-types "^15.5.10"
+
 react-dom@^15.6.1:
   version "15.6.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
@@ -4469,6 +4500,15 @@ react-dom@^15.6.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
+
+react-router-dom@4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.1.1.tgz#3021ade1f2c160af97cf94e25594c5f294583025"
+  dependencies:
+    history "^4.5.1"
+    loose-envify "^1.3.1"
+    prop-types "^15.5.4"
+    react-router "^4.1.1"
 
 react-router-dom@^4.2.2:
   version "4.2.2"
@@ -4485,7 +4525,7 @@ react-router-redux@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/react-router-redux/-/react-router-redux-4.0.8.tgz#227403596b5151e182377dab835b5d45f0f8054e"
 
-react-router@^4.2.0:
+react-router@^4.1.1, react-router@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
   dependencies:
@@ -4733,6 +4773,10 @@ require-uncached@^1.0.2:
   dependencies:
     caller-path "^0.1.0"
     resolve-from "^1.0.0"
+
+reselect@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/reselect/-/reselect-3.0.1.tgz#efdaa98ea7451324d092b2b2163a6a1d7a9a2147"
 
 resolve-from@^1.0.0:
   version "1.0.1"
