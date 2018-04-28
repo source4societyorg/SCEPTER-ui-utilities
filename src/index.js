@@ -203,10 +203,15 @@ function checkStatus(response) {
  *
  * @return {object}           The response data
  */
-export function request(url, options) {
-  return fetch(url, options)
-    .then(checkStatus)
-    .then(parseJSON);
+export function request(url, options, injectedParse) {
+  const parse = valueOrDefault(injectedParse, true);
+  const result = fetch(url, options);
+  const response = result.then(checkStatus);
+  if (parse) {
+    return response.then(parseJSON);
+  }
+
+  return response;
 }
 
 

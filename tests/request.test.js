@@ -30,6 +30,13 @@ describe('request', () => {
           expect(json.hello).toBe('world');
           done();
         });
+
+      request('/thisurliscorrect', undefined, false)
+        .catch(done)
+        .then((response) => {
+          expect(response.status).toBe(200);
+          done();
+        });
     });
   });
 
@@ -76,5 +83,5 @@ describe('request', () => {
           done();
         });
     });
-  });
+  });  
 });
